@@ -532,6 +532,234 @@
     font-weight: 700;
   }
 
+  /* ---------- Invuloefening ---------- */
+  .note .flag.alt {
+    background: linear-gradient(135deg, #60a5fa, #2563eb);
+    letter-spacing: .04em;
+  }
+
+  .accent-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 14px;
+    padding: 10px 14px;
+    border: 1px dashed var(--border-strong);
+    border-radius: 12px;
+    background: #fff;
+  }
+
+  .accent-bar .label {
+    margin-right: 4px;
+    color: var(--muted);
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+
+  .accent-key {
+    min-width: 34px;
+    padding: 6px 8px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: #f8fafc;
+    color: var(--ink);
+    font-family: inherit;
+    font-size: .92rem;
+    font-weight: 600;
+    line-height: 1.1;
+    cursor: pointer;
+    transition: background .18s ease, border-color .18s ease, color .18s ease, transform .18s ease;
+  }
+
+  .accent-key:hover {
+    background: var(--brand-soft);
+    border-color: var(--brand-border);
+    color: var(--brand-dark);
+    transform: translateY(-1px);
+  }
+
+  .accent-key:active { transform: translateY(0); }
+  .accent-key:focus-visible { outline: 3px solid rgba(37, 99, 235, .3); outline-offset: 2px; }
+
+  .exercise-list { display: flex; flex-direction: column; gap: 12px; }
+
+  .exercise-item {
+    padding: 18px 22px;
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    background: var(--card);
+    box-shadow: var(--shadow-sm);
+    transition: border-color .22s ease, box-shadow .22s ease;
+  }
+
+  .exercise-item.correct {
+    border-color: #86efac;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, .12);
+  }
+
+  .exercise-item.wrong {
+    border-color: #fca5a5;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, .1);
+  }
+
+  .sentence {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 7px;
+    font-size: 1rem;
+    color: var(--ink);
+  }
+
+  .q-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
+    border-radius: 7px;
+    background: var(--brand-soft);
+    color: var(--brand-dark);
+    font-size: .72rem;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .blank-input {
+    width: 118px;
+    padding: 8px 12px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    background: #fff;
+    color: var(--brand-deep);
+    font-family: inherit;
+    font-size: .98rem;
+    font-weight: 650;
+    text-align: center;
+    transition: border-color .18s ease, box-shadow .18s ease, background .18s ease;
+  }
+
+  .blank-input::placeholder { color: var(--faint); font-weight: 500; }
+  .blank-input:focus {
+    outline: none;
+    border-color: var(--brand);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, .15);
+  }
+
+  .blank-input.correct {
+    border-color: #22c55e;
+    background: #f0fdf4;
+    color: #15803d;
+  }
+
+  .blank-input.wrong {
+    border-color: #ef4444;
+    background: #fef2f2;
+    color: #b91c1c;
+    animation: shake .4s ease;
+  }
+
+  .feedback-text {
+    display: none;
+    margin-top: 10px;
+    padding-left: 34px;
+    font-size: .87rem;
+    font-weight: 600;
+    line-height: 1.55;
+  }
+
+  .feedback-text.show { display: block; }
+  .feedback-text.good { color: #15803d; }
+  .feedback-text.bad { color: #b91c1c; }
+
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-5px); }
+    40% { transform: translateX(5px); }
+    60% { transform: translateX(-3px); }
+    80% { transform: translateX(3px); }
+  }
+
+  .exercise-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-top: 18px;
+  }
+
+  .btn-primary,
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 13px 22px;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: .9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+  }
+
+  .btn-primary {
+    border: 1px solid var(--brand);
+    background: var(--brand);
+    color: #fff;
+    box-shadow: 0 12px 24px -10px rgba(37, 99, 235, .6);
+  }
+
+  .btn-primary:hover {
+    background: var(--brand-dark);
+    border-color: var(--brand-dark);
+    box-shadow: 0 14px 28px -10px rgba(37, 99, 235, .7);
+    transform: translateY(-1px);
+  }
+
+  .btn-ghost {
+    border: 1px solid var(--border);
+    background: #fff;
+    color: var(--muted);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--border-strong);
+    background: #f8fafc;
+    color: var(--ink);
+    transform: translateY(-1px);
+  }
+
+  .btn-primary:active,
+  .btn-ghost:active { transform: translateY(0); }
+
+  .btn-primary:focus-visible,
+  .btn-ghost:focus-visible { outline: 3px solid rgba(37, 99, 235, .35); outline-offset: 2px; }
+
+  .score {
+    margin-left: auto;
+    padding: 9px 16px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: #fff;
+    color: var(--muted);
+    font-size: .85rem;
+    font-weight: 700;
+    box-shadow: var(--shadow-sm);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .score.perfect {
+    border-color: #86efac;
+    background: #f0fdf4;
+    color: #15803d;
+  }
+
   /* ---------- Footer ---------- */
   .footer {
     max-width: 900px;
@@ -584,6 +812,7 @@
 <nav class="tabs" role="tablist" aria-label="Onderdelen">
   <button class="tab-btn active" role="tab" aria-selected="true" data-panel="numbers">Les nombres</button>
   <button class="tab-btn" role="tab" aria-selected="false" data-panel="flashcards">Flashcards</button>
+  <button class="tab-btn" role="tab" aria-selected="false" data-panel="invuloefening">Invuloefening</button>
 </nav>
 
 <main>
@@ -677,10 +906,47 @@
       </p>
     </div>
   </section>
+
+  <!-- ================= INVULOEFENING ================= -->
+  <section id="invuloefening" class="panel" role="tabpanel">
+    <div class="note">
+      <span class="flag alt">ABC</span>
+      <p>
+        <b>Vul de juiste vorm in.</b> Kies tussen <i>avoir</i>, <i>être</i> en
+        <i>s'appeler</i>. Klik daarna op <b>Check Answers</b> — je krijgt per zin
+        meteen uitleg.
+      </p>
+    </div>
+
+    <div class="accent-bar" aria-label="Accent Helper">
+      <span class="label">Accent Helper</span>
+      <button class="accent-key" type="button" data-char="é">é</button>
+      <button class="accent-key" type="button" data-char="è">è</button>
+      <button class="accent-key" type="button" data-char="ê">ê</button>
+      <button class="accent-key" type="button" data-char="ë">ë</button>
+      <button class="accent-key" type="button" data-char="à">à</button>
+      <button class="accent-key" type="button" data-char="â">â</button>
+      <button class="accent-key" type="button" data-char="ç">ç</button>
+      <button class="accent-key" type="button" data-char="ù">ù</button>
+      <button class="accent-key" type="button" data-char="û">û</button>
+      <button class="accent-key" type="button" data-char="î">î</button>
+      <button class="accent-key" type="button" data-char="ï">ï</button>
+      <button class="accent-key" type="button" data-char="ô">ô</button>
+      <button class="accent-key" type="button" data-char="œ">œ</button>
+    </div>
+
+    <div class="exercise-list" id="exercise-list"></div>
+
+    <div class="exercise-actions">
+      <button id="check-answers" class="btn-primary" type="button">Check Answers</button>
+      <button id="reset-exercise" class="btn-ghost" type="button">Opnieuw</button>
+      <span class="score" id="exercise-score" hidden></span>
+    </div>
+  </section>
 </main>
 
 <footer class="footer">
-  Frans Studiegids · Les nombres — 19 kaarten
+  Frans Studiegids · Les nombres — 19 kaarten · 10 oefenzinnen
 </footer>
 
 <script>
@@ -788,6 +1054,144 @@
   });
 
   render();
+
+  /* ============ Invuloefening ============ */
+  const EXERCISES = [
+    { sentence: "J'___ 15 ans.",            answer: "ai",      why: "Bij 'je' gebruik je 'ai' van het werkwoord avoir." },
+    { sentence: "Tu ___ un frère ?",        answer: "as",      why: "Bij 'tu' gebruik je 'as' van het werkwoord avoir." },
+    { sentence: "Il ___ un chien.",         answer: "a",       why: "Bij 'il' gebruik je 'a' van het werkwoord avoir." },
+    { sentence: "Nous ___ une grande famille.", answer: "avons", why: "Bij 'nous' gebruik je 'avons' van het werkwoord avoir." },
+    { sentence: "Je ___ français.",         answer: "suis",    why: "Bij 'je' gebruik je 'suis' van het werkwoord être." },
+    { sentence: "Tu ___ à l'école ?",       answer: "es",      why: "Bij 'tu' gebruik je 'es' van het werkwoord être." },
+    { sentence: "Elle ___ ma sœur.",        answer: "est",     why: "Bij 'elle' gebruik je 'est' van het werkwoord être." },
+    { sentence: "Nous ___ des jumeaux.",    answer: "sommes",  why: "Bij 'nous' gebruik je 'sommes' van het werkwoord être." },
+    { sentence: "Ils ___ à Asse.",          answer: "sont",    why: "Bij 'ils' gebruik je 'sont' van het werkwoord être." },
+    { sentence: "Je m'___ Darius.",         answer: "appelle", why: "Bij 'je' gebruik je 'appelle' van het wederkerende werkwoord s'appeler." }
+  ];
+
+  const listEl = document.getElementById('exercise-list');
+  const scoreEl = document.getElementById('exercise-score');
+  let lastInput = null;
+
+  EXERCISES.forEach((item, i) => {
+    const parts = item.sentence.split('___');
+
+    const row = document.createElement('div');
+    row.className = 'exercise-item';
+
+    const sentence = document.createElement('div');
+    sentence.className = 'sentence';
+
+    const num = document.createElement('span');
+    num.className = 'q-num';
+    num.textContent = i + 1;
+
+    const before = document.createElement('span');
+    before.textContent = parts[0];
+
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.className = 'blank-input';
+    input.id = 'answer-' + i;
+    input.dataset.index = i;
+    input.autocomplete = 'off';
+    input.spellcheck = false;
+    input.placeholder = '…';
+    input.setAttribute('aria-label', 'Antwoord voor zin ' + (i + 1));
+
+    const after = document.createElement('span');
+    after.textContent = parts[1] || '';
+
+    sentence.append(num, before, input, after);
+
+    const feedback = document.createElement('div');
+    feedback.className = 'feedback-text';
+    feedback.id = 'feedback-' + i;
+
+    row.append(sentence, feedback);
+    listEl.append(row);
+
+    input.addEventListener('focus', () => { lastInput = input; });
+    input.addEventListener('keydown', e => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        checkAnswers();
+      }
+    });
+  });
+
+  function checkAnswers() {
+    let correctCount = 0;
+
+    EXERCISES.forEach((item, i) => {
+      const input = document.getElementById('answer-' + i);
+      const row = input.closest('.exercise-item');
+      const feedback = document.getElementById('feedback-' + i);
+
+      const given = input.value.trim().toLowerCase();
+      const expected = item.answer.toLowerCase();
+
+      input.classList.remove('correct', 'wrong');
+      row.classList.remove('correct', 'wrong');
+      feedback.classList.remove('show', 'good', 'bad');
+
+      if (given === expected) {
+        correctCount++;
+        input.classList.add('correct');
+        row.classList.add('correct');
+        feedback.textContent = 'Goed gedaan!';
+        feedback.classList.add('show', 'good');
+      } else {
+        input.classList.add('wrong');
+        row.classList.add('wrong');
+        feedback.textContent =
+          'Fout. Het juiste antwoord is: ' + item.answer +
+          '. Uitleg: ' + item.why;
+        feedback.classList.add('show', 'bad');
+      }
+    });
+
+    scoreEl.hidden = false;
+    scoreEl.textContent = correctCount + ' / ' + EXERCISES.length + ' correct';
+    scoreEl.classList.toggle('perfect', correctCount === EXERCISES.length);
+  }
+
+  function resetExercise() {
+    EXERCISES.forEach((item, i) => {
+      const input = document.getElementById('answer-' + i);
+      const row = input.closest('.exercise-item');
+      const feedback = document.getElementById('feedback-' + i);
+
+      input.value = '';
+      input.classList.remove('correct', 'wrong');
+      row.classList.remove('correct', 'wrong');
+      feedback.textContent = '';
+      feedback.classList.remove('show', 'good', 'bad');
+    });
+
+    scoreEl.hidden = true;
+    scoreEl.textContent = '';
+    scoreEl.classList.remove('perfect');
+    lastInput = null;
+  }
+
+  document.getElementById('check-answers').addEventListener('click', checkAnswers);
+  document.getElementById('reset-exercise').addEventListener('click', resetExercise);
+
+  document.querySelectorAll('.accent-key').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const input = lastInput || document.querySelector('.blank-input');
+      if (!input) return;
+
+      const char = btn.dataset.char;
+      const start = input.selectionStart ?? input.value.length;
+      const end = input.selectionEnd ?? input.value.length;
+
+      input.focus();
+      input.setRangeText(char, start, end, 'end');
+      lastInput = input;
+    });
+  });
 </script>
 </body>
 </html>
